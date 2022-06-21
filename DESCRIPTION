@@ -8,6 +8,7 @@ Description: What the package does (one paragraph).
 Depends:
     ggtree
 Imports:
+    ggplot2,
     yulab.utils
 License: Artistic-2.0
 Encoding: UTF-8

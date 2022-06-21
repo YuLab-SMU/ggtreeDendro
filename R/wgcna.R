@@ -5,6 +5,8 @@
 ##' @param x WGCNA::blockwiseModules() output
 ##' @return ggtree object
 ##' @importFrom yulab.utils get_fun_from_pkg
+##' @importFrom ggplot2 labs
+##' @importFrom ggplot2 scale_fill_identity
 ##' @export
 ##' @author Guangchuang Yu
 plot_wgcna <- function(x) {
@@ -18,5 +20,8 @@ plot_wgcna <- function(x) {
                 row.names=seq_along(colors))
 
   p <- ggtree(x$dendrograms[[1]], layout = "dendrogram", ladderize = FALSE, size=.2)
-  gheatmap(p, d, color=NA, width = .1) + scale_fill_identity()    
+
+  gheatmap(p, d, color=NA, width = .1) + scale_fill_identity() + 
+    labs(caption = as.character(as.expression(x$dendrograms[[1]]$call)))
+   
 }
