@@ -8,7 +8,7 @@
 ##' @importFrom ggplot2 labs
 ##' @importFrom ggplot2 scale_fill_identity
 ##' @export
-##' @author Guangchuang Yu
+##' @author Fengbei Li and Guangchuang Yu
 plot_wgcna <- function(x) {
   colors <- x$colors
   labels2colors <- yulab.utils::get_fun_from_pkg(fun="labels2colors", pkg="WGCNA")
