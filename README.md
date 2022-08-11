@@ -4,4 +4,5 @@ This package offers `autoplot` methods and `plot_xx` functions to allow automati
 Coverage:
 
 + WGCNA::blockwiseModules() output
++ `linkage` object defined in the `mdendro` package
 

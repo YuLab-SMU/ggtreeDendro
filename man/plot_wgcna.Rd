@@ -19,5 +19,5 @@ plot wgcna result
 Display WGCNA modules using ggtree. This function is similar to WGCNA::plotDendroAndColors()
 }
 \author{
-Guangchuang Yu
+Fengbei Li and Guangchuang Yu
 }

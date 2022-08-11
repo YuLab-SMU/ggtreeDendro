@@ -7,6 +7,7 @@
 ##' @importFrom yulab.utils get_fun_from_pkg
 ##' @importFrom ggplot2 labs
 ##' @importFrom ggplot2 scale_fill_identity
+##' @importFrom ggtree gheatmap
 ##' @export
 ##' @author Fengbei Li and Guangchuang Yu
 plot_wgcna <- function(x) {
@@ -25,3 +26,5 @@ plot_wgcna <- function(x) {
     labs(caption = as.character(as.expression(x$dendrograms[[1]]$call)))
    
 }
+
+
