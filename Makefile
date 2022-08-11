@@ -59,6 +59,11 @@ vignettes:
 	Rscript -e 'rmarkdown::render("gh-pages/README.Rmd")';\
 	mv gh-pages/README.html gh-pages/index.html
 
+publish:
+	cd gh-pages;\
+	git add . ;\
+	git commit -m 'update docs';\
+	git push -u origin gh-pages
 
 gitmaintain:
 	git gc --auto;\
