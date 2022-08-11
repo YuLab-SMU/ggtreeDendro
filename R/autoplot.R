@@ -9,7 +9,7 @@ ggplot2::autoplot
 ##' @method autoplot linkage
 ##' @export
 autoplot.linkage <- function(object, ...) {
-    ggtree(object, layout="dendrogram") + 
+    ggtree(object, ladderize = FALSE, layout="dendrogram") + 
     geom_tiplab() + 
     theme(plot.margin=margin(b=3, unit='cm')) 
 }
