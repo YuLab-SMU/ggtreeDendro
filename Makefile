@@ -55,6 +55,10 @@ clean:
 	cd ..;\
 	$(RM) -r $(PKGNAME).Rcheck/
 
+vignettes:
+	Rscript -e 'rmarkdown::render("gh-pages/README.Rmd")';\
+	mv gh-pages/README.html gh-pages/index.html
+
 
 gitmaintain:
 	git gc --auto;\
