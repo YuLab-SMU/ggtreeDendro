@@ -1,6 +1,6 @@
 Package: ggtreeDendro
 Title: Drawing 'dendrogram' using 'ggtree'
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(
        person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), 
             comment = c(ORCID = "0000-0002-6485-8781")),
@@ -12,8 +12,7 @@ Description: Offers a set of 'autoplot' methods to visualize tree-like structure
 Depends:
     ggtree (>= 3.5.2)
 Imports:
-    ggplot2,
-    yulab.utils
+    ggplot2
 Suggests:
     aplot,
     cluster,
@@ -21,10 +20,12 @@ Suggests:
     mdendro,
     prettydoc,    
     rmarkdown,
-    stats
+    stats,
+    yulab.utils
 License: Artistic-2.0
 VignetteBuilder: knitr
 ByteCompile: true
 Encoding: UTF-8
+biocViews: Clustering, Classification, DecisionTree, Phylogenetics, Visualization
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
