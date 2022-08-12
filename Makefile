@@ -56,8 +56,7 @@ clean:
 	$(RM) -r $(PKGNAME).Rcheck/
 
 vignettes:
-	Rscript -e 'rmarkdown::render("gh-pages/README.Rmd")';\
-	mv gh-pages/README.html gh-pages/index.html
+	Rscript -e 'rmarkdown::render("gh-pages/index.Rmd")'
 
 publish:
 	cd gh-pages;\
