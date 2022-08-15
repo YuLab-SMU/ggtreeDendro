@@ -56,3 +56,17 @@ autoplot.diana <- autoplot.linkage
 ##' @export
 autoplot.twins <- autoplot.linkage
 
+
+##' @rdname autoplo
+##' @method autoplot pvclust
+##' @importFrom ggtree geom_nodelab
+##' @importFrom ggplot2 aes_
+##' @importFrom ggplot2 scale_color_manual
+##' @export
+autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE, ...) {
+    autoplot.hclust(object, layout=layout, ladderize=ladderize, ...) +
+    geom_nodelab(aes_(label=~au, color="au"), angle=0, vjust=-.5, hjust=1.3) +
+    geom_nodelab(aes_(label=~bp, color="bp"), angle=0, vjust=-.5, hjust=-.2) +
+    scale_color_manual(values=c("au"="#39BEB1", "bp" = "#E495A5"), name = 'p-values')
+  
+}
