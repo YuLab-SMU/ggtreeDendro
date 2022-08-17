@@ -10,6 +10,7 @@
 \alias{autoplot.agnes}
 \alias{autoplot.diana}
 \alias{autoplot.twins}
+\alias{autoplot.pvclust}
 \title{Objects exported from other packages}
 \usage{
 \method{autoplot}{linkage}(object, layout = "dendrogram", ladderize = FALSE, ...)
@@ -23,6 +24,8 @@
 \method{autoplot}{diana}(object, layout = "dendrogram", ladderize = FALSE, ...)
 
 \method{autoplot}{twins}(object, layout = "dendrogram", ladderize = FALSE, ...)
+
+\method{autoplot}{pvclust}(object, layout = "dendrogram", ladderize = FALSE, ...)
 }
 \arguments{
 \item{object}{input object}

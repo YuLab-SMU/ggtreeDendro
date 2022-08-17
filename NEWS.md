@@ -1,5 +1,6 @@
-## ggtreeDendro 0.99.2
+## ggtreeDendro 0.99.3
 
++ add examples of `pvclust` in vignettes (2022-08-17, Wed)
 + `autoplot()` method for `pvclust` object (2022-08-15, Mon)
 + fixed `BiocCheck()` (2022-08-12, Fri)
 + add `biocViews` in DESCRIPTION (2022-08-12, Fri)

@@ -72,3 +72,18 @@ p1 <- autoplot(x1) + geom_tiplab()
 p2 <- autoplot(x2) + geom_tiplab()
 plot_list(p1, p2, ncol=2)
 ```
+
+
+## `pvclust` object
+
+The `pvclust` class is defined in the `r CRANpkg("pvclust")` package.
+
+
+```{r fig.width=8, height=6}
+library(pvclust)
+data(Boston, package = "MASS")
+
+set.seed(123)
+result <- pvclust(Boston, method.dist="cor", method.hclust="average", nboot=1000, parallel=TRUE)
+autoplot(result)
+```

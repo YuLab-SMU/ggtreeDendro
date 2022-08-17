@@ -57,7 +57,7 @@ autoplot.diana <- autoplot.linkage
 autoplot.twins <- autoplot.linkage
 
 
-##' @rdname autoplo
+##' @rdname autoplot
 ##' @method autoplot pvclust
 ##' @importFrom ggtree geom_nodelab
 ##' @importFrom ggplot2 aes_
