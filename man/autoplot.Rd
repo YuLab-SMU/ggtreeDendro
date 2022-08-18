@@ -4,8 +4,8 @@
 \name{reexports}
 \alias{reexports}
 \alias{autoplot}
-\alias{autoplot.linkage}
 \alias{autoplot.hclust}
+\alias{autoplot.linkage}
 \alias{autoplot.dendrogram}
 \alias{autoplot.agnes}
 \alias{autoplot.diana}
@@ -13,9 +13,9 @@
 \alias{autoplot.pvclust}
 \title{Objects exported from other packages}
 \usage{
-\method{autoplot}{linkage}(object, layout = "dendrogram", ladderize = FALSE, ...)
-
 \method{autoplot}{hclust}(object, layout = "dendrogram", ladderize = FALSE, ...)
+
+\method{autoplot}{linkage}(object, layout = "dendrogram", ladderize = FALSE, ...)
 
 \method{autoplot}{dendrogram}(object, layout = "dendrogram", ladderize = FALSE, ...)
 
@@ -25,7 +25,15 @@
 
 \method{autoplot}{twins}(object, layout = "dendrogram", ladderize = FALSE, ...)
 
-\method{autoplot}{pvclust}(object, layout = "dendrogram", ladderize = FALSE, ...)
+\method{autoplot}{pvclust}(
+  object,
+  layout = "dendrogram",
+  ladderize = FALSE,
+  label_edge = FALSE,
+  pvrect = FALSE,
+  alpha = 0.95,
+  ...
+)
 }
 \arguments{
 \item{object}{input object}

@@ -1,6 +1,6 @@
 Package: ggtreeDendro
 Title: Drawing 'dendrogram' using 'ggtree'
-Version: 0.99.3
+Version: 0.99.4
 Authors@R: c(
        person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), 
             comment = c(ORCID = "0000-0002-6485-8781")),
@@ -12,7 +12,8 @@ Description: Offers a set of 'autoplot' methods to visualize tree-like structure
 Depends:
     ggtree (>= 3.5.2)
 Imports:
-    ggplot2
+    ggplot2,
+    tidytree
 Suggests:
     aplot,
     cluster,

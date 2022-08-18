@@ -17,56 +17,102 @@ ggplot2::autoplot
 ##' @importFrom ggtree ggtree
 ##' @importFrom ggtree geom_tiplab
 ##' @importFrom ggtree theme_dendrogram
+##' @importFrom ggtree theme_tree2
 ##' @importFrom ggplot2 theme
 ##' @importFrom ggplot2 margin
-##' @method autoplot linkage
+##' @method autoplot hclust
 ##' @export
 ##' @examples 
 ##' d <- dist(USArrests)
 ##' hc <- hclust(d, "ave")
 ##' autoplot(hc) + geom_tiplab()
-autoplot.linkage <- function(object, layout = "dendrogram", ladderize = FALSE, ...) {
-    ggtree(object, ladderize = ladderize, layout=layout, ...) + 
+autoplot.hclust <- function(object, layout = "dendrogram", ladderize = FALSE, ...) {
+    p <- ggtree(object, ladderize = ladderize, layout=layout, ...) 
     #geom_tiplab() + 
-    theme_dendrogram(plot.margin=margin(t=6, r=6, b=80, l=6, unit='pt')) 
+
+    if (is.function(layout)) {
+        thm <- NULL
+    } else if (layout %in% c("fan", "circular", "inward_circular", "radial",
+                            "unrooted", "equal_angle", "daylight", "ape")) {
+        thm <- NULL
+    } else if (layout == "dendrogram") {
+        thm <- theme_dendrogram(plot.margin=margin(t=6, r=6, b=80, l=6, unit='pt'))
+    } else {
+        thm <- theme_tree2(plot.margin=margin(t=6, r=80, b=6, l=6, unit='pt'))
+    }
+     
+    p + thm
 }
 
 ##' @rdname autoplot
-##' @method autoplot hclust
+##' @method autoplot linkage
 ##' @export
-autoplot.hclust <- autoplot.linkage
+autoplot.linkage <- autoplot.hclust
 
 ##' @rdname autoplot
 ##' @method autoplot dendrogram
 ##' @export
-autoplot.dendrogram <- autoplot.linkage
+autoplot.dendrogram <- autoplot.hclust
 
 ##' @rdname autoplot
 ##' @method autoplot agnes
 ##' @export
-autoplot.agnes <- autoplot.linkage
+autoplot.agnes <- autoplot.hclust
 
 ##' @rdname autoplot
 ##' @method autoplot diana
 ##' @export
-autoplot.diana <- autoplot.linkage
+autoplot.diana <- autoplot.hclust
 
 ##' @rdname autoplot
 ##' @method autoplot twins
 ##' @export
-autoplot.twins <- autoplot.linkage
+autoplot.twins <- autoplot.hclust
 
 
 ##' @rdname autoplot
 ##' @method autoplot pvclust
 ##' @importFrom ggtree geom_nodelab
+##' @importFrom ggtree geom_hilight
 ##' @importFrom ggplot2 aes_
 ##' @importFrom ggplot2 scale_color_manual
+##' @importFrom tidytree as.treedata
+##' @importFrom tidytree as_tibble
+##' @importFrom tidytree rootnode
+##' @importFrom tidytree offspring
 ##' @export
-autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE, ...) {
-    autoplot.hclust(object, layout=layout, ladderize=ladderize, ...) +
-    geom_nodelab(aes_(label=~au, color="au"), angle=0, vjust=-.5, hjust=1.3) +
-    geom_nodelab(aes_(label=~bp, color="bp"), angle=0, vjust=-.5, hjust=-.2) +
-    scale_color_manual(values=c("au"="#39BEB1", "bp" = "#E495A5"), name = 'p-values')
+autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE, 
+                            label_edge = FALSE, pvrect = FALSE, alpha = 0.95, ...) {
+
+    x <-  as.treedata(object)
+                            
+    p <- autoplot.hclust(x, layout=layout, ladderize=ladderize, ...) +
+        geom_nodelab(aes_(label=~au, color="au"), angle=0, vjust=-.5, hjust=1.3) +
+        geom_nodelab(aes_(label=~bp, color="bp"), angle=0, vjust=-.5, hjust=-.2) +
+        scale_color_manual(values=c("au"="#97c497", "bp" = "#e06663"), name = 'p-values')
   
+    if (label_edge) {
+        p <- p + geom_nodelab(aes_(label=~sub("_edge", "", label)), 
+                        color="grey50", hjust=0.5, angle=0, vjust=1.2, size=3.5)
+
+    }
+
+    if (pvrect) {
+        d <- as_tibble(x)
+        
+        n <- d$node[d$au > alpha * 100]
+        n <- n[!is.na(n)]
+        n <- n[n != rootnode(x)]
+
+        os <- offspring(x, n)
+        xx <- do.call('rbind', lapply(os, function(i) n %in% i))
+        n <- n[!apply(xx, 2, any)]
+
+        p <- p + geom_hilight(node = n, fill=NA, colour='red', 
+                            to.bottom=TRUE, extendto=-.2) 
+    }
+
+    return(p)
 }
+
+
