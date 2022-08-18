@@ -85,5 +85,5 @@ data(Boston, package = "MASS")
 
 set.seed(123)
 result <- pvclust(Boston, method.dist="cor", method.hclust="average", nboot=1000, parallel=TRUE)
-autoplot(result, label_edge=TRUE, alpha = 0.95)
+autoplot(result, label_edge=TRUE, pvrect = TRUE) + geom_tiplab()
 ```
