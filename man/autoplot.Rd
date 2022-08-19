@@ -13,17 +13,17 @@
 \alias{autoplot.pvclust}
 \title{Objects exported from other packages}
 \usage{
-\method{autoplot}{hclust}(object, layout = "dendrogram", ladderize = FALSE, ...)
+\method{autoplot}{hclust}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
 
-\method{autoplot}{linkage}(object, layout = "dendrogram", ladderize = FALSE, ...)
+\method{autoplot}{linkage}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
 
-\method{autoplot}{dendrogram}(object, layout = "dendrogram", ladderize = FALSE, ...)
+\method{autoplot}{dendrogram}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
 
-\method{autoplot}{agnes}(object, layout = "dendrogram", ladderize = FALSE, ...)
+\method{autoplot}{agnes}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
 
-\method{autoplot}{diana}(object, layout = "dendrogram", ladderize = FALSE, ...)
+\method{autoplot}{diana}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
 
-\method{autoplot}{twins}(object, layout = "dendrogram", ladderize = FALSE, ...)
+\method{autoplot}{twins}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
 
 \method{autoplot}{pvclust}(
   object,
@@ -32,6 +32,7 @@
   label_edge = FALSE,
   pvrect = FALSE,
   alpha = 0.95,
+  hang = 0.1,
   ...
 )
 }
@@ -41,6 +42,10 @@
 \item{layout}{layout for plotting the tree}
 
 \item{ladderize}{whether ladderize the tree (default FALSE)}
+
+\item{hang}{numeric The fraction of the tree plot height by which labels
+should hang below the rest of the plot. A negative value will cause the
+labels to hang down from 0.}
 
 \item{...}{additional paramters that passed to ggtree}
 }

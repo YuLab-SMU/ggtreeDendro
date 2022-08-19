@@ -5,13 +5,16 @@ ggplot2::autoplot
 
 
 ## autoplot methods
-## 
 ## autoplot methods for hierarchical clustering results
+
 ##' @title autoplot
 ##' @rdname autoplot
 ##' @param object input object
 ##' @param layout layout for plotting the tree
 ##' @param ladderize whether ladderize the tree (default FALSE)
+##' @param hang numeric The fraction of the tree plot height by which labels
+##' should hang below the rest of the plot. A negative value will cause the 
+##' labels to hang down from 0.
 ##' @param ... additional paramters that passed to ggtree
 ##' @return ggtree object
 ##' @importFrom ggtree ggtree
@@ -26,8 +29,8 @@ ggplot2::autoplot
 ##' d <- dist(USArrests)
 ##' hc <- hclust(d, "ave")
 ##' autoplot(hc) + geom_tiplab()
-autoplot.hclust <- function(object, layout = "dendrogram", ladderize = FALSE, ...) {
-    p <- ggtree(object, ladderize = ladderize, layout=layout, ...) 
+autoplot.hclust <- function(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...) {
+    p <- ggtree(object, ladderize = ladderize, layout=layout, hang = hang, ...) 
     #geom_tiplab() + 
 
     if (is.function(layout)) {
@@ -82,9 +85,9 @@ autoplot.twins <- autoplot.hclust
 ##' @importFrom tidytree offspring
 ##' @export
 autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE, 
-                            label_edge = FALSE, pvrect = FALSE, alpha = 0.95, ...) {
+                            label_edge = FALSE, pvrect = FALSE, alpha = 0.95, hang = 0.1, ...) {
 
-    x <-  as.treedata(object)
+    x <-  as.treedata(object, hang = hang)
                             
     p <- autoplot.hclust(x, layout=layout, ladderize=ladderize, ...) +
         geom_nodelab(aes_(label=~au, color="au"), angle=0, vjust=-.5, hjust=1.3) +
