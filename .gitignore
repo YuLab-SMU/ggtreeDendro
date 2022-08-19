@@ -1,1 +1,6 @@
 gh-pages
+.DS_Store
+.RData
+.Rhistory
+.Rproj.user
+vignettes/*.html
