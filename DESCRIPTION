@@ -10,7 +10,7 @@ Authors@R: c(
        )
 Description: Offers a set of 'autoplot' methods to visualize tree-like structures (e.g., hierarchical clustering and classification/regression trees) using 'ggtree'. You can adjust graphical parameters using grammar of graphic syntax and integrate external data to the tree.
 Depends:
-    ggtree (>= 3.5.2)
+    ggtree (>= 3.5.3)
 Imports:
     ggplot2,
     tidytree
@@ -24,6 +24,7 @@ Suggests:
     pvclust,   
     rmarkdown,
     stats,
+    treeio,
     yulab.utils
 License: Artistic-2.0
 VignetteBuilder: knitr

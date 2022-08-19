@@ -32,6 +32,15 @@ library(ggtreeDendro)
 library(aplot)
 ```
 
+
+Clustering is very importance method to classify items into different categories and to infer functions since similar objects tend to behavior similarly. There are more than 200 packages in Bioconductor implement clustering algorithms or employ clustering methods for omic-data analysis. 
+
+Albeit the methods are important for data analysis, the visualization is quite limited. Most the the packages only have the ability to visualize the hierarchical tree structure using `stats:::plot.hclust()`. This package is design to visualize hierarchical tree structure with associated data (e.g., clinical information collected with the samples) using the powerful in-house developed `r Biocpkg("ggtree")` package. 
+
+This package implements a set of `autoplot()` methods to display tree structure. We will implement more `autoplot()` methods to support more objects. The output of these `autoplot()` methods is a `ggtree` object, which can be further annotated by adding layers using `r CRANpkg("ggplot2")` syntax. Integrating associated data to annotate the tree is also supported by `r Biocpkg("ggtreeExtra")` package.
+
+Here are some demonstrations of using `autoplot()` methods to visualize common hierarchical clustering tree objects.
+
 ## `hclust` and `dendrogram` objects
 
 These two classes are defined in the `r CRANpkg("stats")` package.
@@ -87,3 +96,6 @@ set.seed(123)
 result <- pvclust(Boston, method.dist="cor", method.hclust="average", nboot=1000, parallel=TRUE)
 autoplot(result, label_edge=TRUE, pvrect = TRUE) + geom_tiplab()
 ```
+
+The `pvclust` object contains two types of p-values: AU (Approximately Unbiased) p-value and BP (Boostrap Probability) value. These values will be automatically labelled on the tree. 
+
