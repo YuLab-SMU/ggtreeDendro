@@ -41,13 +41,22 @@
 
 \item{layout}{layout for plotting the tree}
 
-\item{ladderize}{whether ladderize the tree (default FALSE)}
+\item{ladderize}{logical whether ladderize the tree (default FALSE)}
 
 \item{hang}{numeric The fraction of the tree plot height by which labels
 should hang below the rest of the plot. A negative value will cause the
 labels to hang down from 0.}
 
 \item{...}{additional paramters that passed to ggtree}
+
+\item{label_edge}{logical whether display the label of edge (only for
+pvclust object), default is FALSE.}
+
+\item{pvrect}{logical whether display the clusters with relatively high/low
+p-values, default is FALSE. (only for pvclust object)}
+
+\item{alpha}{numeric the threshold value for p-values, default is 0.95 (only
+for pvclust object).}
 }
 \value{
 ggtree object

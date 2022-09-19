@@ -1,1 +1,8 @@
 Makefile
+^Makefile$
+^README\.md$
+^README\.Rmd$
+^CONDUCT\.md$
+^\.Rproj\.user$
+^\.Rproj$
+^R/wgcna\.R$

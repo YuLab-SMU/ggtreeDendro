@@ -4,3 +4,4 @@ gh-pages
 .Rhistory
 .Rproj.user
 vignettes/*.html
+R/wgcna.R
