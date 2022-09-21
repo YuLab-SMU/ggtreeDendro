@@ -25,13 +25,13 @@ knitr::opts_chunk$set(tidy = FALSE,
 library(yulab.utils)                      
 ```
 
+# Introduction
 
 ```{r}
 library(ggtree)
 library(ggtreeDendro)
 library(aplot)
 ```
-
 
 Clustering is very importance method to classify items into different categories and to infer functions since similar objects tend to behavior similarly. There are more than 200 packages in Bioconductor implement clustering algorithms or employ clustering methods for omic-data analysis. 
 
@@ -97,5 +97,13 @@ result <- pvclust(Boston, method.dist="cor", method.hclust="average", nboot=1000
 autoplot(result, label_edge=TRUE, pvrect = TRUE) + geom_tiplab()
 ```
 
-The `pvclust` object contains two types of p-values: AU (Approximately Unbiased) p-value and BP (Boostrap Probability) value. These values will be automatically labelled on the tree. 
+The `pvclust` object contains two types of p-values: AU (Approximately Unbiased) p-value and BP (Boostrap Probability) value. These values will be automatically labelled on the tree.
 
+
+# Session information
+
+Here is the output of sessionInfo() on the system on which this document was compiled:
+
+```{r, echo=FALSE}
+sessionInfo()
+```

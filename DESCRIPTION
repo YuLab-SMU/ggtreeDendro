@@ -20,10 +20,11 @@ Suggests:
     knitr,
     MASS,
     mdendro,
-    prettydoc, 
-    pvclust,   
+    prettydoc,
+    pvclust,
     rmarkdown,
     stats,
+    testthat (>= 3.0.0),
     treeio,
     yulab.utils
 License: Artistic-2.0
@@ -33,3 +34,4 @@ Encoding: UTF-8
 biocViews: Clustering, Classification, DecisionTree, Phylogenetics, Visualization
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
+Config/testthat/edition: 3

@@ -11,10 +11,16 @@ ggplot2::autoplot
 ##' @rdname autoplot
 ##' @param object input object
 ##' @param layout layout for plotting the tree
-##' @param ladderize whether ladderize the tree (default FALSE)
+##' @param ladderize logical whether ladderize the tree (default FALSE)
 ##' @param hang numeric The fraction of the tree plot height by which labels
 ##' should hang below the rest of the plot. A negative value will cause the 
 ##' labels to hang down from 0.
+##' @param label_edge logical whether display the label of edge (only for 
+##' pvclust object), default is FALSE. 
+##' @param pvrect logical whether display the clusters with relatively high/low 
+##' p-values, default is FALSE. (only for pvclust object)
+##' @param alpha numeric the threshold value for p-values, default is 0.95 (only 
+##' for pvclust object).
 ##' @param ... additional paramters that passed to ggtree
 ##' @return ggtree object
 ##' @importFrom ggtree ggtree
