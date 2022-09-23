@@ -123,5 +123,3 @@ autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE,
 
     return(p)
 }
-
-

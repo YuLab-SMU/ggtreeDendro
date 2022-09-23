@@ -1,5 +1,7 @@
-## ggtreeDendro 0.99.5
+## ggtreeDendro 0.99.6
 
++ `scale_color_subtree` from `ggtree` package (2022-09-23, Fri)
++ `geom_line_cutree` to add a line at the position where the tree was cut by `cutree()` 
 + solve issues requested by Bioconductor review (2022-09-21, Wed)
     - <https://github.com/Bioconductor/Contributions/issues/2748#issuecomment-1249521341>
 + add paramters `label_edge` and `alpha` in `autoplot.pvclust` (2022-08-18, Thu)
