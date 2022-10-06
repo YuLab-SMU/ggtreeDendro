@@ -6,6 +6,10 @@
 ##' @param group taxa group information
 ##' @return updated tree view
 ##' @export
+##' @examples
+##' d <- dist(USArrests)
+##' hc <- hclust(d, "ave")
+##' autoplot(hc) + scale_color_subtree(3)
 ##' @author Guangchuang Yu
 scale_color_subtree <- function(group) {
     if (inherits(group, 'kmeans')) {

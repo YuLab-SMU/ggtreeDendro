@@ -18,6 +18,11 @@ updated tree view
 \description{
 scale tree color by subtree (e.g., output of cutree, kmeans, or other clustering algorithm)
 }
+\examples{
+d <- dist(USArrests)
+hc <- hclust(d, "ave")
+autoplot(hc) + scale_color_subtree(3)
+}
 \author{
 Guangchuang Yu
 }
