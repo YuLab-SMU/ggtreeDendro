@@ -1,4 +1,4 @@
-## ggtreeDendro 0.99.6
+## ggtreeDendro 0.99.7
 
 + `scale_color_subtree` from `ggtree` package (2022-09-23, Fri)
 + `geom_line_cutree` to add a line at the position where the tree was cut by `cutree()` 

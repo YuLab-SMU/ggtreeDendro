@@ -84,9 +84,9 @@ release:
 	
 update:
 	git fetch --all;\
-	git checkout master;\
+	git checkout main;\
 	git merge upstream/master;\
-	git merge origin/master
+	git merge origin/main
 
 push: update
 	git push upstream master;\
