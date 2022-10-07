@@ -1,6 +1,6 @@
 Package: ggtreeDendro
 Title: Drawing 'dendrogram' using 'ggtree'
-Version: 0.99.9
+Version: 0.99.10
 Authors@R: c(
        person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), 
             comment = c(ORCID = "0000-0002-6485-8781")),
@@ -13,6 +13,7 @@ Depends:
     ggtree (>= 3.5.3)
 Imports:
     ggplot2,
+    stats,
     tidytree
 Suggests:
     aplot,
@@ -23,7 +24,6 @@ Suggests:
     prettydoc,
     pvclust,
     rmarkdown,
-    stats,
     testthat (>= 3.0.0),
     treeio,
     yulab.utils

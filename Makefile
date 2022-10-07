@@ -89,7 +89,7 @@ update:
 	git merge origin/main
 
 push: update
-	git push upstream master;\
+	git push upstream main:master;\
 	git push origin main
 
 biocinit:
