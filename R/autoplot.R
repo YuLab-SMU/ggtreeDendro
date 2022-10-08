@@ -78,6 +78,12 @@ autoplot.diana <- autoplot.hclust
 ##' @export
 autoplot.twins <- autoplot.hclust
 
+##' @rdname autoplot
+##' @method autoplot bclust
+##' @export
+autoplot.bclust <- function(object, ...) {
+    autoplot.hclust(object@hclust, ...)
+}
 
 ##' @rdname autoplot
 ##' @method autoplot pvclust

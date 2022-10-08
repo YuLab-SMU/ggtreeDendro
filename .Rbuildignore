@@ -6,3 +6,4 @@ Makefile
 ^\.Rproj\.user$
 ^\.Rproj$
 ^R/wgcna\.R$
+Examples.R

@@ -1,5 +1,6 @@
-## ggtreeDendro 0.99.10
+## ggtreeDendro 0.99.11
 
++ `autoplot` method for `bclust` object (2022-10-08, Sat)
 + `scale_color_subtree` from `ggtree` package (2022-09-23, Fri)
 + `geom_line_cutree` to add a line at the position where the tree was cut by `cutree()` 
 + solve issues requested by Bioconductor review (2022-09-21, Wed)
