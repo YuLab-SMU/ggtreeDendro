@@ -84,13 +84,13 @@ release:
 	
 update:
 	git fetch --all;\
-	git checkout main;\
+	git checkout master;\
 	git merge upstream/master;\
-	git merge origin/main
+	git merge origin/master
 
 push: update
-	git push upstream main:master;\
-	git push origin main
+	git push upstream master;\
+	git push origin master
 
 biocinit:
 	git remote add upstream git@git.bioconductor.org:packages/$(PKGNAME).git;\
