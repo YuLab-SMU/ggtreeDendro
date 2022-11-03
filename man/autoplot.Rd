@@ -11,6 +11,7 @@
 \alias{autoplot.diana}
 \alias{autoplot.twins}
 \alias{autoplot.bclust}
+\alias{autoplot.hdbscan}
 \alias{autoplot.pvclust}
 \title{Objects exported from other packages}
 \usage{
@@ -27,6 +28,8 @@
 \method{autoplot}{twins}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
 
 \method{autoplot}{bclust}(object, ...)
+
+\method{autoplot}{hdbscan}(object, ...)
 
 \method{autoplot}{pvclust}(
   object,

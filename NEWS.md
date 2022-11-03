@@ -1,10 +1,16 @@
-# ggtreeDendro
+# ggtreeDendro 1.1.1
+
++ `geom_rect_subtree` layer to hilight subtrees (2022-11-03, Thu)
++ supports `bclust` object (S3) output by `e1071::bclust()` 
++ supports `hdbscan` object 
+
+# ggtreeDendro 1.0.0
 
 + Bioconductor RELEASE_3_16 (2022-11-02, Wed)
 
 ## ggtreeDendro 0.99.11
 
-+ `autoplot` method for `bclust` object (2022-10-08, Sat)
++ `autoplot` method for `bclust` object (S4) (2022-10-08, Sat)
 + `scale_color_subtree` from `ggtree` package (2022-09-23, Fri)
 + `geom_line_cutree` to add a line at the position where the tree was cut by `cutree()` 
 + solve issues requested by Bioconductor review (2022-09-21, Wed)

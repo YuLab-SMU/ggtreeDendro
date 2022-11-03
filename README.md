@@ -5,11 +5,17 @@ Coverage:
 
 + ~~WGCNA::blockwiseModules() output~~
 + `agnes` object defined in `cluster` package
-+ `bclust` object defined in `flexclust` package
++ `bclust` object defined in `flexclust` (S4) or `e1071` (S3) package
 + `dendrogram` object defined in `stats` package
+    - `FCPS::HierarchicalDBSCAN()[['Dendrogram']]`
+    - `FCPS::HierarchicalClustering()[['Dendrogram']]`
 + `diana` object defined in `cluster` package
 + `hclust` object defined in `stats` package
-    - `genieclust::gclust()` also output `hclust` object
+    - `amap::hcluster()`
+    - `fastcluster::hclust()`
+    - `genieclust::gclust()` 
+    - `FactoClass::ward.cluster()` 
++ `hdbscan` object defined in `dbscan` package
 + `linkage` object defined in the `mdendro` package
 + `protoclust` object defined in `protoclust` package
 + `pvclust` object defined in `pvclust` package

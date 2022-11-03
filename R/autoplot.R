@@ -82,7 +82,21 @@ autoplot.twins <- autoplot.hclust
 ##' @method autoplot bclust
 ##' @export
 autoplot.bclust <- function(object, ...) {
-    autoplot.hclust(object@hclust, ...)
+    if (is.list(object)) {
+        # S3 class defined in "e1071"
+        hc <- object$hclust
+    } else {
+        # S4 class defined in "flexclust"
+        hc <- object@hclust
+    }
+    autoplot.hclust(hc, ...)
+}
+
+##' @rdname autoplot
+##' @method autoplot hdbscan
+##' @export
+autoplot.hdbscan <- function(object, ...) {
+    autoplot.hclust(object@hc, ...)
 }
 
 ##' @rdname autoplot
@@ -129,3 +143,5 @@ autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE,
 
     return(p)
 }
+
+

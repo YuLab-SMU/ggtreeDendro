@@ -3,6 +3,9 @@
 ## `hclust` and `dendrogram` objects
 
 # genieclust::gclust() also output `hclust` object
+# amap::hcluster() also output `hclust` object
+# FactoClass::ward.cluster() also output `hclust` object
+
 
 d <- dist(USArrests)
 
@@ -10,7 +13,7 @@ hc <- hclust(d, "ave")
 den <- as.dendrogram(hc)
 
 p1 <- autoplot(hc) + geom_tiplab()
-p2 <- autoplot(den)
+p2 <- autoplot(den) + geom_rect_subtree(4)
 plot_list(p1, p2, ncol=2)
 
 
@@ -49,11 +52,16 @@ autoplot(result, label_edge=TRUE, pvrect = TRUE) + geom_tiplab()
 
 ## `bclust` object
 
+### S4
 library(flexclust)
 data(iris)
 bc1 <- bclust(iris[,1:4], 3, base.k=5)
 autoplot(bc1)
 
+### S3
+library(e1071)
+bc2 <- bclust(iris[,1:4], 3, base.centers=5)
+autoplot(bc2)
 
 ## `protoclust` object
 
@@ -63,3 +71,11 @@ d <- dist(Boston)
 pc <- protoclust(d)
 plotwithprototypes(pc)
 autoplot(pc)
+
+
+## `hdbscan` object
+
+library(dbscan)
+res <- hdbscan(moons, minPts = 5)
+autoplot(res)
+

@@ -22,17 +22,22 @@ geom_line_cutree <- function(group, linetype = "dashed", offset = 0, ...) {
 }
 
 
+hc_cluster <- function(hc, group) {
+    if (is.numeric(group) && length(group) == 1) {
+        group <- cutree(hc, group)
+    } 
+    return(group)
+}
+
 ##' @importFrom ggplot2 ggplot_add
 ##' @method ggplot_add line_cutree
 ##' @importFrom ggplot2 geom_vline
 ##' @importFrom tidytree as.phylo
 ##' @export
 ggplot_add.line_cutree <- function(object, plot, object_name) {
-    group <- object$group
-    hc <- as.hclust(as.phylo(plot$data))
-    if (is.numeric(group) && length(group) == 1) {
-        group <- cutree(hc, group)
-    } 
+    hc <- as.hclust(as.phylo(plot$data))    
+
+    group <- hc_cluster(hc, object$group)
 
     offset <- object$offset
 
