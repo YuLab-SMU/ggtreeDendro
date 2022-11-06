@@ -1,5 +1,6 @@
-# ggtreeDendro 1.1.1.001
+# ggtreeDendro 1.1.2
 
++ `plot_wgcna()` for visualizing WGCNA dendrogram (2022-11-06, Sun)
 + supports `hkmeans` object defined in the `factoextra` package (2022-11-06, Sun)
 + set default `options` to align `geom_rect_subtree()` and adjust width extension.
 
