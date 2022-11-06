@@ -12,6 +12,7 @@
 \alias{autoplot.twins}
 \alias{autoplot.bclust}
 \alias{autoplot.hdbscan}
+\alias{autoplot.hkmeans}
 \alias{autoplot.pvclust}
 \title{Objects exported from other packages}
 \usage{
@@ -30,6 +31,8 @@
 \method{autoplot}{bclust}(object, ...)
 
 \method{autoplot}{hdbscan}(object, ...)
+
+\method{autoplot}{hkmeans}(object, ...)
 
 \method{autoplot}{pvclust}(
   object,

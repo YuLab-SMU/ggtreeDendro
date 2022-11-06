@@ -28,7 +28,8 @@ geom_rect_subtree <- function(group=NULL, color = "red", ...) {
 ##' @importFrom tidytree MRCA
 ##' @export
 ggplot_add.rect_subtree <- function(object, plot, object_name) {
-        
+
+
     if (is.null(object$node)) {
         hc <- as.hclust(as.phylo(plot$data))
         group <- hc_cluster(hc, object$group)

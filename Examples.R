@@ -79,3 +79,21 @@ library(dbscan)
 res <- hdbscan(moons, minPts = 5)
 autoplot(res)
 
+
+## `hkmeans` object
+
+library(factoextra)
+# Load data
+data(USArrests)
+# Scale the data
+df <- scale(USArrests)
+
+# Compute hierarchical k-means clustering
+res.hk <-hkmeans(df, 4)
+
+hkmeans_tree(res.hk, cex = 0.6)
+fviz_dend(res.hk, cex = 0.6)
+
+library(ggtreeDendro)
+autoplot(res.hk) + geom_rect_subtree(4, color=c("red", "blue", "green", "purple"))
+autoplot(res.hk$hclust) + scale_color_subtree(4)

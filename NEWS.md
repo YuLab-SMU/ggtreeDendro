@@ -1,3 +1,8 @@
+# ggtreeDendro 1.1.1.001
+
++ supports `hkmeans` object defined in the `factoextra` package (2022-11-06, Sun)
++ set default `options` to align `geom_rect_subtree()` and adjust width extension.
+
 # ggtreeDendro 1.1.1
 
 + `geom_rect_subtree` layer to hilight subtrees (2022-11-03, Thu)

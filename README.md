@@ -16,6 +16,7 @@ Coverage:
     - `genieclust::gclust()` 
     - `FactoClass::ward.cluster()` 
 + `hdbscan` object defined in `dbscan` package
++ `hkmeans` object defined in `factoextra` package
 + `linkage` object defined in the `mdendro` package
 + `protoclust` object defined in `protoclust` package
 + `pvclust` object defined in `pvclust` package

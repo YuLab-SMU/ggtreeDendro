@@ -99,6 +99,15 @@ autoplot.hdbscan <- function(object, ...) {
     autoplot.hclust(object@hc, ...)
 }
 
+
+##' @rdname autoplot
+##' @method autoplot hkmeans
+##' @export
+autoplot.hkmeans <- function(object, ...) {
+    autoplot.hclust(object@hclust, ...)
+}
+
+
 ##' @rdname autoplot
 ##' @method autoplot pvclust
 ##' @importFrom ggtree geom_nodelab
