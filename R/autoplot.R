@@ -146,6 +146,8 @@ autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE,
         xx <- do.call('rbind', lapply(os, function(i) n %in% i))
         n <- n[!apply(xx, 2, any)]
 
+        options(clade_align = FALSE)
+        on.exit(options(clade_align = TRUE))
         p <- p + geom_hilight(node = n, fill=NA, colour='red', 
                             to.bottom=TRUE, extendto=-.2) 
     }
