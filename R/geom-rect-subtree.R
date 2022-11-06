@@ -28,7 +28,8 @@ geom_rect_subtree <- function(group=NULL, color = "red", ...) {
 ##' @importFrom tidytree MRCA
 ##' @export
 ggplot_add.rect_subtree <- function(object, plot, object_name) {
-
+    set_subtree_rec()
+    on.exit(unset_subtree_rec())
 
     if (is.null(object$node)) {
         hc <- as.hclust(as.phylo(plot$data))
@@ -45,3 +46,14 @@ ggplot_add.rect_subtree <- function(object, plot, object_name) {
     ly <- do.call(geom_hilight, params)
     ggplot_add(ly, plot, object_name)
 }
+
+set_subtree_rec <- function() {
+  options(clade_width_extend = 0.35)
+  options(clade_align = TRUE)
+}
+
+unset_subtree_rec <- function() {
+  options(clade_width_extend = 0.5)
+  options(clade_align = FALSE)
+}
+

@@ -12,9 +12,6 @@
 
   packageStartupMessage(paste0(msg, citation))
   
-  options(clade_width_extend = 0.35)
-  options(clade_align = TRUE)
-
 }
 
 
