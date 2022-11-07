@@ -1,7 +1,12 @@
 This package offers `autoplot` methods to allow automatically visualizing tree objects (`hclust`, `dendrogram`, etc.) using `ggtree`. 
 
 
+
+
 Coverage:
+
+<a href="https://www.routledge.com/Data-Integration-Manipulation-and-Visualization-of-Phylogenetic-Trees/Yu/p/book/9781032233574"><img src="https://yulab-smu.top/treedata-book/9781032233574_cover_review.png" style="width:200px;border:2px solid black;" align="right"/></a>
+
 
 + `agnes` object defined in `cluster` package
 + `bclust` object defined in `flexclust` (S4) or `e1071` (S3) package
