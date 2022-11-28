@@ -14,6 +14,7 @@
 \alias{autoplot.hdbscan}
 \alias{autoplot.hkmeans}
 \alias{autoplot.pvclust}
+\alias{autoplot.ClusterExperiment}
 \title{Objects exported from other packages}
 \usage{
 \method{autoplot}{hclust}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
@@ -44,6 +45,8 @@
   hang = 0.1,
   ...
 )
+
+\method{autoplot}{ClusterExperiment}(object, layout = "rectangular", ...)
 }
 \arguments{
 \item{object}{input object}

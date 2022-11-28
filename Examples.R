@@ -97,3 +97,26 @@ fviz_dend(res.hk, cex = 0.6)
 library(ggtreeDendro)
 autoplot(res.hk) + geom_rect_subtree(4, color=c("red", "blue", "green", "purple"))
 autoplot(res.hk$hclust) + scale_color_subtree(4)
+
+
+# ClusterExperiment
+
+library(clusterExperiment)
+data(simData)
+
+#create a clustering, for 8 clusters (truth was 3) 
+cl <-clusterSingle(simData, subsample=FALSE, 
+                   sequential=FALSE, 
+                   mainClusterArgs=list(clusterFunction="pam", clusterArgs=list(k=8)))
+
+#create dendrogram of clusters and then 
+# merge clusters based ondendrogram: 
+cl <- makeDendrogram(cl) 
+cl <- mergeClusters(cl,mergeMethod="adjP",DEMethod="limma",
+                    cutoff=0.1,plot=FALSE) 
+
+plotDendrogram(cl,leafType="samples",whichClusters="all",plotType="colorblock")
+
+library(ggtreeDendro)
+autoplot(cl)
+

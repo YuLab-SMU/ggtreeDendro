@@ -155,4 +155,18 @@ autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE,
     return(p)
 }
 
+##' @rdname autoplot
+##' @method autoplot ClusterExperiment
+##' @importFrom ggplot2 aes_
+##' @export
+autoplot.ClusterExperiment <- function(object, layout = 'rectangular', ...) {
+    x <- as.treedata(object@dendro_clusters)
+    p <- ggtree(x, layout = layout)
+    if(any(!is.na(x@data$ClusterIdMerge))) {
+        p <- p + geom_hilight(mapping=aes_(subset=~!is.na(ClusterIdMerge), 
+                                    fill=~ClusterIdMerge))
+    }
+
+    return(p)
+}
 

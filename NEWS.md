@@ -1,3 +1,7 @@
+# ggtreeDendro 1.1.2.001
+
++ `autoplot` method for 'ClusterExperiment' object (2022-11-28, Mon)
+
 # ggtreeDendro 1.1.2
 
 + `plot_wgcna()` for visualizing WGCNA dendrogram (2022-11-06, Sun)

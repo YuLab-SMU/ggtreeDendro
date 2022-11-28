@@ -1,6 +1,6 @@
 Package: ggtreeDendro
 Title: Drawing 'dendrogram' using 'ggtree'
-Version: 1.1.2
+Version: 1.1.2.001
 Authors@R: c(
        person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), 
             comment = c(ORCID = "0000-0002-6485-8781")),
@@ -34,5 +34,5 @@ ByteCompile: true
 Encoding: UTF-8
 biocViews: Clustering, Classification, DecisionTree, Phylogenetics, Visualization
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.2
 Config/testthat/edition: 3
