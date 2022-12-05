@@ -14,6 +14,7 @@ Coverage:
 + `dendrogram` object defined in `stats` package
     - `FCPS::HierarchicalDBSCAN()[['Dendrogram']]`
     - `FCPS::HierarchicalClustering()[['Dendrogram']]`
+    - `BHC::bhc()`
 + `diana` object defined in `cluster` package
 + `hclust` object defined in `stats` package
     - `amap::hcluster()`
