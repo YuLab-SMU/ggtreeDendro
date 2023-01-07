@@ -120,3 +120,37 @@ plotDendrogram(cl,leafType="samples",whichClusters="all",plotType="colorblock")
 library(ggtreeDendro)
 autoplot(cl)
 
+## HGC
+
+library(HGC)
+data(Pollen)
+Pollen.PCs <- Pollen[["PCs"]]
+Pollen.Label.Tissue <- Pollen[["Tissue"]]
+Pollen.Label.CellLine <- Pollen[["CellLine"]]
+
+Pollen.SNN <- SNN.Construction(Pollen.PCs)
+rownames(Pollen.SNN) <- rownames(Pollen.PCs)
+Pollen.ClusteringTree <- HGC.dendrogram(G = Pollen.SNN)
+Pollen.labels <- data.frame(Tissue = Pollen.Label.Tissue,
+                            CellLine = Pollen.Label.CellLine)
+HGC.PlotDendrogram(tree = Pollen.ClusteringTree,
+                   k = 5, plot.label = TRUE,
+                   labels = Pollen.labels)
+
+## 
+
+library(treeio)
+library(ggtree)
+library(ggtreeDendro)
+
+x <- as.phylo(as.dendrogram(Pollen.ClusteringTree))
+
+p1 <- ggtree(x, layout = 'dendrogram', ladderize = FALSE)
+
+p <- ggtree(x, layout = 'dendrogram', ladderize = FALSE, branch.length = 'none')
+
+g <- gheatmap(p, Pollen.labels[,1, drop=FALSE], width=.05, colnames_angle = 0, colnames_offset_y = -20, color=NA)
+g <- g + ggnewscale::new_scale_fill()
+g <- gheatmap(g, Pollen.labels[,2, drop=FALSE], width=.05, colnames_angle = 0, colnames_offset_y = -20, color=NA, offset = 1) 
+
+g + scale_color_subtree(5)

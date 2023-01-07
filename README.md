@@ -21,6 +21,8 @@ Coverage:
     - `fastcluster::hclust()`
     - `genieclust::gclust()` 
     - `FactoClass::ward.cluster()` 
+    - `goSTAG::performHierarchicalClustering()`
+    - `HGC::HGC.dendrogram()`
 + `hdbscan` object defined in `dbscan` package
 + `hkmeans` object defined in `factoextra` package
 + `linkage` object defined in the `mdendro` package
