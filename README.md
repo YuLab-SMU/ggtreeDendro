@@ -16,6 +16,7 @@ Coverage:
     - `FCPS::HierarchicalClustering()[['Dendrogram']]`
     - `BHC::bhc()`
 + `diana` object defined in `cluster` package
++ `genoMatriXeR` object defined in the `regioneReloaded` package
 + `hclust` object defined in `stats` package
     - `amap::hcluster()`
     - `fastcluster::hclust()`
@@ -26,6 +27,7 @@ Coverage:
 + `hdbscan` object defined in `dbscan` package
 + `hkmeans` object defined in `factoextra` package
 + `linkage` object defined in the `mdendro` package
++ `multiLocalZScore` object defined in the `regioneReloaded` package
 + `protoclust` object defined in `protoclust` package
 + `pvclust` object defined in `pvclust` package
 + `twins` object defined in `cluster` package

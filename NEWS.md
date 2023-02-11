@@ -1,5 +1,6 @@
-# ggtreeDendro 1.1.2.001
+# ggtreeDendro 1.1.2.002
 
++ `autoplot` method for 'genoMatriXeR' and 'multiLocalZScore' objects (both defined in the 'regioneReloaded' package) (2023-02-11, Sat)
 + `autoplot` method for 'ClusterExperiment' object (2022-11-28, Mon)
 
 # ggtreeDendro 1.1.2

@@ -15,6 +15,8 @@
 \alias{autoplot.hkmeans}
 \alias{autoplot.pvclust}
 \alias{autoplot.ClusterExperiment}
+\alias{autoplot.genoMatriXeR}
+\alias{autoplot.multiLocalZScore}
 \title{Objects exported from other packages}
 \usage{
 \method{autoplot}{hclust}(object, layout = "dendrogram", ladderize = FALSE, hang = 0.1, ...)
@@ -47,6 +49,10 @@
 )
 
 \method{autoplot}{ClusterExperiment}(object, layout = "rectangular", ...)
+
+\method{autoplot}{genoMatriXeR}(object, hctype = "rows", ...)
+
+\method{autoplot}{multiLocalZScore}(object, ...)
 }
 \arguments{
 \item{object}{input object}

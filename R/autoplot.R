@@ -170,3 +170,24 @@ autoplot.ClusterExperiment <- function(object, layout = 'rectangular', ...) {
     return(p)
 }
 
+##' @rdname autoplot
+##' @method autoplot genoMatriXeR
+##' @export
+autoplot.genoMatriXeR <- function(object, hctype = "rows", ...) {
+    hctype <- match.arg(hctype, c("rows", "cols"))
+
+    obj <- object@matrix
+    if (hctype == "rows") {
+        hc <- obj[["FitRow"]]
+    } else {
+        hc <- obj[["FitCol"]]
+    }
+    autoplot.hclust(hc, ...)
+}
+
+##' @rdname autoplot
+##' @method autoplot multiLocalZScore
+##' @export
+autoplot.multiLocalZScore <- function(object, ...) {
+    autoplot.hclust(object@matrix[["FitRow"]], ...)
+}
