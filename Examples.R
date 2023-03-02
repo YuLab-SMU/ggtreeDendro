@@ -120,6 +120,19 @@ plotDendrogram(cl,leafType="samples",whichClusters="all",plotType="colorblock")
 library(ggtreeDendro)
 autoplot(cl)
 
+## dendro
+
+library(ggplot2)
+library(ggtree)
+library(ggdendro)
+library(ggtreeDendro)
+
+hc <- hclust(dist(USArrests), "ave")
+x <- dendro_data(hc)
+
+autoplot(x) + geom_tiplab()
+
+
 ## HGC
 
 library(HGC)
@@ -136,6 +149,7 @@ Pollen.labels <- data.frame(Tissue = Pollen.Label.Tissue,
 HGC.PlotDendrogram(tree = Pollen.ClusteringTree,
                    k = 5, plot.label = TRUE,
                    labels = Pollen.labels)
+
 
 ## 
 

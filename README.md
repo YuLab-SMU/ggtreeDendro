@@ -11,6 +11,7 @@ Coverage:
 + `agnes` object defined in `cluster` package
 + `bclust` object defined in `flexclust` (S4) or `e1071` (S3) package
 + `ClusterExperiment` object defined in `ClusterExperiment` package
++ `dendro` object defined in `ggdendro` package
 + `dendrogram` object defined in `stats` package
     - `FCPS::HierarchicalDBSCAN()[['Dendrogram']]`
     - `FCPS::HierarchicalClustering()[['Dendrogram']]`
