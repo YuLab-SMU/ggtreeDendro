@@ -13,6 +13,7 @@
 \alias{autoplot.bclust}
 \alias{autoplot.hdbscan}
 \alias{autoplot.hkmeans}
+\alias{autoplot.dendro}
 \alias{autoplot.pvclust}
 \alias{autoplot.ClusterExperiment}
 \alias{autoplot.genoMatriXeR}
@@ -36,6 +37,8 @@
 \method{autoplot}{hdbscan}(object, ...)
 
 \method{autoplot}{hkmeans}(object, ...)
+
+\method{autoplot}{dendro}(object, ...)
 
 \method{autoplot}{pvclust}(
   object,

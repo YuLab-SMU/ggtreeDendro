@@ -3,6 +3,7 @@
 S3method(autoplot,ClusterExperiment)
 S3method(autoplot,agnes)
 S3method(autoplot,bclust)
+S3method(autoplot,dendro)
 S3method(autoplot,dendrogram)
 S3method(autoplot,diana)
 S3method(autoplot,genoMatriXeR)

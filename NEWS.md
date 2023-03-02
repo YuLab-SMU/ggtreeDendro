@@ -1,3 +1,8 @@
+# ggtreeDendro 1.1.3.991
+
++ `autoplot` method for 'dendro' object (`ggdendro::dendro_data()` output) (2023-03-02, Thu)    
+    - see also <https://github.com/YuLab-SMU/treeio/pull/95>
+
 # ggtreeDendro 1.1.3
 
 + `autoplot` method for 'genoMatriXeR' and 'multiLocalZScore' objects (both defined in the 'regioneReloaded' package) (2023-02-11, Sat)

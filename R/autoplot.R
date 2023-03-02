@@ -107,6 +107,12 @@ autoplot.hkmeans <- function(object, ...) {
     autoplot.hclust(object@hclust, ...)
 }
 
+##' @rdname autoplot
+##' @method autoplot dendro
+##' @export
+autoplot.dendro <- function(object, ...) {
+    autoplot.hclust(as.phylo(object), ...)
+}
 
 ##' @rdname autoplot
 ##' @method autoplot pvclust
@@ -191,3 +197,5 @@ autoplot.genoMatriXeR <- function(object, hctype = "rows", ...) {
 autoplot.multiLocalZScore <- function(object, ...) {
     autoplot.hclust(object@matrix[["FitRow"]], ...)
 }
+
+
