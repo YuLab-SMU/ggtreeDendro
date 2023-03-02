@@ -111,7 +111,7 @@ autoplot.hkmeans <- function(object, ...) {
 ##' @method autoplot dendro
 ##' @export
 autoplot.dendro <- function(object, ...) {
-    autoplot.hclust(as.phylo(object), ...)
+    autoplot.hclust(object, ...)
 }
 
 ##' @rdname autoplot
