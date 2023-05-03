@@ -1,3 +1,4 @@
+# ggtreeDendro\n\n+ Bioconductor RELEASE_3_17 (2023-05-03, Wed)\n
 # ggtreeDendro 1.1.3.991
 
 + `autoplot` method for 'dendro' object (`ggdendro::dendro_data()` output) (2023-03-02, Thu)    
