@@ -1,8 +1,11 @@
-# ggtreeDendro\n\n+ Bioconductor RELEASE_3_17 (2023-05-03, Wed)\n
-# ggtreeDendro 1.1.3.991
+# ggtreeDendro 1.3.1
 
 + `autoplot` method for 'dendro' object (`ggdendro::dendro_data()` output) (2023-03-02, Thu)    
     - see also <https://github.com/YuLab-SMU/treeio/pull/95>
+
+# ggtreeDendro 1.2.0
+
++ Bioconductor RELEASE_3_17 (2023-05-03, Wed)
 
 # ggtreeDendro 1.1.3
 
