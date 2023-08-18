@@ -31,6 +31,7 @@ library(yulab.utils)
 library(ggtree)
 library(ggtreeDendro)
 library(aplot)
+scale_color_subtree <- ggtreeDendro::scale_color_subtree
 ```
 
 Clustering is very importance method to classify items into different categories and to infer functions since similar objects tend to behavior similarly. There are more than 200 packages in Bioconductor implement clustering algorithms or employ clustering methods for omic-data analysis. 

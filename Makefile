@@ -21,9 +21,10 @@ sticker:
 	rm Rplots.pdf
 
 build:
-	cd ..;\
-	R CMD build $(PKGSRC)
-
+	#cd ..;\
+	#R CMD build $(PKGSRC)
+	Rscript -e 'devtools::build()'
+	
 build2:
 	cd ..;\
 	R CMD build --no-build-vignettes $(PKGSRC)
@@ -32,10 +33,11 @@ install:
 	cd ..;\
 	R CMD INSTALL $(PKGNAME)_$(PKGVERS).tar.gz
 
-check: rd build
-	cd ..;\
-	Rscript -e 'rcmdcheck::rcmdcheck("$(PKGNAME)_$(PKGVERS).tar.gz")'
-
+check: rd
+	#cd ..;\
+	#Rscript -e 'rcmdcheck::rcmdcheck("$(PKGNAME)_$(PKGVERS).tar.gz")'
+	Rscript -e 'devtools::check()'
+	
 check2: rd build
 	cd ..;\
 	R CMD check $(PKGNAME)_$(PKGVERS).tar.gz

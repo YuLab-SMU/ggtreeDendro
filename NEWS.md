@@ -1,3 +1,7 @@
+# ggtreeDendro 1.3.2
+
++ update according to the change of tidytree (2023-08-18, Fri)
+
 # ggtreeDendro 1.3.1
 
 + `autoplot` method for 'dendro' object (`ggdendro::dendro_data()` output) (2023-03-02, Thu)    
