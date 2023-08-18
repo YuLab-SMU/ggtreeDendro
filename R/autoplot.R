@@ -122,7 +122,7 @@ autoplot.dendro <- function(object, ...) {
 ##' @importFrom ggplot2 scale_color_manual
 ##' @importFrom tidytree as.treedata
 ##' @importFrom tidytree as_tibble
-##' @importFrom tidytree rootnode
+##' @importFrom tidytree rootnode as.phylo
 ##' @importFrom tidytree offspring
 ##' @export
 autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE, 
@@ -146,7 +146,7 @@ autoplot.pvclust <- function(object, layout = "dendrogram", ladderize = FALSE,
         
         n <- d$node[d$au > alpha * 100]
         n <- n[!is.na(n)]
-        n <- n[n != rootnode(x)]
+        n <- n[n != rootnode(as.phylo(x))]
 
         os <- offspring(x, n)
         xx <- do.call('rbind', lapply(os, function(i) n %in% i))
