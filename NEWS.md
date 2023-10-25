@@ -1,3 +1,7 @@
+# ggtreeDendro 1.4.0
+
++ Bioconductor RELEASE_3_18 (2023-10-25, Wed)
+
 # ggtreeDendro 1.3.2
 
 + update according to the change of tidytree (2023-08-18, Fri)
