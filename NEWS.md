@@ -1,3 +1,7 @@
+# ggtreeDendro 1.8.0
+
++ Bioconductor RELEASE_3_20 (2024-10-30, Wed)
+
 # ggtreeDendro 1.6.0
 
 + Bioconductor RELEASE_3_19 (2024-05-15, Wed)
